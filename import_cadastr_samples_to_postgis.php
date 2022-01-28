@@ -11,6 +11,7 @@ if (! ($handle = opendir($inputDir))) {
 global $pgConnect;
 if (! $dbconn = $pgConnect()) {
     echo "Unable to connect to database. Please recheck environment...\n";
+    exit (2);
 }
 
 $sql = 'INSERT INTO "cadastr" ("number", "border") VALUES ($1, ST_GeomFromKML($2))';
@@ -23,14 +24,15 @@ while (false !== ($entry = readdir($handle))) {
     if ($entry == '.' || $entry == '..') {
         continue;
     }
-    $kml = simplexml_load_file($inputDir . '/' . $entry);
+    $absPath = $inputDir . '/' . $entry;
+    $kml = simplexml_load_file($absPath);
     $number = pathinfo($entry, PATHINFO_FILENAME);
     $polygon = $kml->Document->Placemark->Polygon->asXML();
     $result = pg_execute($dbconn, "insertcadastr", [$number, $polygon]);
     if ($result === false) {
-        echo 'Unable to import cadast: ' . $entry . "\n";
+        echo 'Unable to import cadast: ' . $absPath . "\n";
     } else {
-        echo 'Successfully imported cadast: ' . $entry . "\n";
+        echo 'Successfully imported cadast: ' . $absPath . "\n";
     }
 }
 

@@ -9,6 +9,7 @@ $inputPolygon = $kml->Document->Placemark->Polygon->asXML();
 global $pgConnect;
 if (! $dbconn = $pgConnect()) {
     echo "Unable to connect to database. Please recheck environment...\n";
+    exit (1);
 }
 
 $inboundSql = 'SELECT "number" FROM "cadastr" WHERE ST_Contains(ST_GeomFromKML($1), "border")';
