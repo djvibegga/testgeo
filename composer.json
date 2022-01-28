@@ -1,0 +1,10 @@
+{
+	"name" : "eugeniy/testgeo",
+	"type" : "project",
+	"license" : "MIT",
+	"authors" : [{
+			"name" : "Eugeniy Marilev",
+			"email" : "eugeniymarilev1@gmail.com"
+		}
+	]
+}

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+    <name>Untitled Polygon.kml</name>
+    <Placemark>
+        <name>Untitled Polygon</name>
+        <Polygon>
+            <outerBoundaryIs>
+                <LinearRing>
+                    <coordinates>
+                        36.5100000,41.7600000,0 38.0300000,42.9700000,0 40.2200000,41.5400000,0 38.4900000,47.4400000,0 38.3900000,48.8500000,0 43.1100000,43.3200000,0 38.5100000,45.8800000,0 44.7000000,50.6400000,0 38.3800000,43.8800000,0 39.2700000,47.0500000,0
+                    </coordinates>
+                </LinearRing>
+            </outerBoundaryIs>
+        </Polygon>
+    </Placemark>
+</Document>
+</kml>
